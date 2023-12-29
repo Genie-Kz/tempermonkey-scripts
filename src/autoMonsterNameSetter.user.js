@@ -559,6 +559,14 @@
             monsterNameSelect.value = monsterId;
 
             monsterNameSelect.dispatchEvent(new Event('change'));
+            $('[data-select2-id]').first().trigger({
+                type: 'select2:select',
+                params: {
+                    data: {
+                        id: monsterId
+                    }
+                }
+            });
         }
     }
 
