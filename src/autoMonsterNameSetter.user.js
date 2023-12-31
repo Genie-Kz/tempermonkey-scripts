@@ -570,9 +570,31 @@
         }
     }
 
+    /**
+    * aタグのテキスト、リンクを転記
+    * @param {HTMLAnchorElement} source 転記元
+    * @param {HTMLAnchorElement} destination 転記先
+    */
+    function replaceMenuContent(source, destination) {
+        if (!source || !destination) return;
+        destination.textContent = source.textContent;
+        destination.href = source.href;
+    }
+
+    /**
+     * 序盤おすすめ配合メニューを耐性計算ツールメニューに変更
+     */
+    function replaceBreedingWithResistanceCalc() {
+        const source = document.querySelectorAll('.tips-vertical-menu_item.gtm-ga4-walkthrough-click-event')[3];
+        const destination = document.querySelectorAll('.global-menu-wrap.cf .global-menu.cf .global-menu_item a')[4];
+        replaceMenuContent(source, destination);
+    }
+
+
     function main() {
         storeMonsterName();
         setMonsterName();
+        replaceBreedingWithResistanceCalc();
     }
 
     setTimeout(main, 500);
