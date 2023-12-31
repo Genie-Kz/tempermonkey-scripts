@@ -586,7 +586,8 @@
      */
     function replaceBreedingWithResistanceCalc() {
         const source = document.querySelectorAll('.tips-vertical-menu_item.gtm-ga4-walkthrough-click-event')[3];
-        const destination = document.querySelectorAll('.global-menu-wrap.cf .global-menu.cf .global-menu_item a')[4];
+        const destination = document.querySelectorAll('.global-menu-wrap.cf .global-menu.cf .global-menu_item a')[4] ||
+            document.querySelectorAll('.global-menu.cf a')[4];
         replaceMenuContent(source, destination);
     }
 
